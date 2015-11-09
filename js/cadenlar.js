@@ -3,10 +3,7 @@ Cadenlar = (function() {
   function Cadenlar(opts) {
     this.cadenlarContainer = opts.cadenlarContainer;
     this.input = opts.input;
-    // this.render(this.cadenlarContainer);
-    console.log(this.input[0], this.cadenlarContainer[0]);
     this.html = this.getHtml();
-    console.log(this.html);
     this.cadenlarContainer.html('').html(this.html);
     this.onRender()
   }

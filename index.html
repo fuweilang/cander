@@ -25,36 +25,35 @@
 			position: absolute;
 			top: 42px;
 			left: 25;
-			width: 400px;
-			height: 400px;
+			width: 240px;
+			height: 226px;
 			background: #888;
 			display: none;
 		}
 	</style>
 </head>
 <body>
-	<div class="cadenlerarea">
+	<div class="cadenlerarea" id='cadenlerarea'>
 		<input type="text" id='cadenlarinput'>
 		<div id='cadenlar'></div>
 	</div>
 </body>
 	<script src="js/cadenlar.js"></script>
 	<script>
-		var cadenlerarea = $('.cadenlerarea')
+		var cadenlerarea = $('#cadenlerarea')
 		var cadenlarcon = $('#cadenlar')
 		var input = $('#cadenlarinput');
-		console.log(123);
 		var cadenlar = new Cadenlar({
 			cadenlarContainer: cadenlarcon,
-			input: input
+			input: input,
 		});
-		html = cadenlar.getHtml();
 		cadenlerarea.on('mousedown', function(e){
-			e.stopPropagation();
-			cadenlarcon.css({'display':'block'})
-		})
-		$(document).on('mousedown', function(e){
-			cadenlarcon.css({'display':'none'})
-		})
+      e.stopPropagation();
+      cadenlarcon.css({'display':'block'})
+    })
+    $(document).on('mousedown', function(e){
+      cadenlarcon.css({'display':'none'})
+    })
+		
 	</script>
 </html>
