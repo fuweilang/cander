@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/cadenlar.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<style>
+		.cadenlerarea {
+			position: relative;
+			width: 185px;
+			height: 30px;
+			padding: 10px 0 0 20px;
+		}
+		input {
+			left: 0;
+			top: 0;
+			border: 0;
+			border: 1px solid #666;
+			width: 180px;
+			height: 28px;
+		}
+		#cadenlar {
+			position: absolute;
+			top: 42px;
+			left: 25;
+			width: 400px;
+			height: 400px;
+			background: #888;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="cadenlerarea">
+		<input type="text" id='cadenlarinput'>
+		<div id='cadenlar'></div>
+	</div>
+</body>
+	<script src="js/cadenlar.js"></script>
+	<script>
+		var cadenlerarea = $('.cadenlerarea')
+		var cadenlarcon = $('#cadenlar')
+		var input = $('#cadenlarinput');
+		console.log(123);
+		var cadenlar = new Cadenlar({
+			cadenlarContainer: cadenlarcon,
+			input: input
+		});
+		html = cadenlar.getHtml();
+		cadenlerarea.on('mousedown', function(e){
+			e.stopPropagation();
+			cadenlarcon.css({'display':'block'})
+		})
+		$(document).on('mousedown', function(e){
+			cadenlarcon.css({'display':'none'})
+		})
+	</script>
+</html>
